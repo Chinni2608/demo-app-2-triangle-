@@ -27,11 +27,17 @@ def main():
     drone.position_set(-10/2, 10* 3**0.5/2, 0, relative=True) # Move to the second  vertex
     drone.position_set(-10/2, -10* 3**0.5/2, 0, relative=True) # Move to the third vertex
     
-    print("landing")
+     # Return to the initial position for a complete triangle
+    drone.position_set(10, 0, 10, relative=True)
+    time.sleep(2)
+     print("landing")
     drone.land(False)
-    
+    print('Cheers!!')
+
     # shutdown the instance
     drone.disconnect()
 
 if __name__ == "__main__":
     main()
+
+    
